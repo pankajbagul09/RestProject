@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>RestProject</groupId>
   <artifactId>RestProject</artifactId>
-  <version>0.0.3-SNAPSHOT</version>
+  <version>0.0.4-SNAPSHOT</version>
   <packaging>war</packaging>
   <repositories>
         <repository>
@@ -112,6 +112,7 @@
 						 <phase>deploy</phase>
 						 <goals>
 						 	<goal>deploy</goal>
+						 	<goal>release</goal>
 						 </goals>
 						</execution>
 					</executions>
