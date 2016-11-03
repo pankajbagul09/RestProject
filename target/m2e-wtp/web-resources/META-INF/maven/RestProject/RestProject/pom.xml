@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>RestProject</groupId>
   <artifactId>RestProject</artifactId>
-  <version>0.0.2-SNAPSHOT</version>
+  <version>0.0.3-SNAPSHOT</version>
   <packaging>war</packaging>
   <repositories>
         <repository>
@@ -83,6 +83,7 @@
                     <source>1.7</source>
                     <target>1.7</target> 
                 </configuration>
+                
             </plugin>
 			<plugin>
 		        <groupId>org.apache.maven.plugins</groupId>
