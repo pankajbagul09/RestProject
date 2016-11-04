@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>RestProject</groupId>
   <artifactId>RestProject</artifactId>
-  <version>1.1.7-SNAPSHOT</version>
+  <version>1.1.7</version>
   <packaging>war</packaging>
   <properties>
 		<spring.version>4.3.1.RELEASE</spring.version>
@@ -128,7 +128,7 @@
 	 <scm>
         <connection>scm:git:https://github.com/pankajbagul09/RestProject</connection>
         <developerConnection>scm:git:https://github.com/pankajbagul09/RestProject</developerConnection>
-      <tag>HEAD</tag>
+      <tag>1.1.7-tag</tag>
   </scm>
       
 
