@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>RestProject</groupId>
   <artifactId>RestProject</artifactId>
-  <version>0.0.6-SNAPSHOT</version>
+  <version>1.1.1-SNAPSHOT</version>
   <packaging>war</packaging>
   <repositories>
         <repository>
@@ -14,7 +14,7 @@
     </repositories>
     <distributionManagement>
        <repository>
-       <id>nexus-releases</id>
+       <id>nexus-internal</id>
        <url>http://localhost:8081/nexus/content/repositories/releases</url>
        </repository>
 	   <snapshotRepository>
@@ -75,7 +75,7 @@
   </scm>
       
     <build>
-        <finalName>JerseyDemos</finalName>
+        <finalName>RestProject</finalName>
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -104,7 +104,7 @@
 			<plugins>
 				<plugin>
 					<groupId>org.sonatype.plugins</groupId>
-					<artifactId>nexus-maven-plugin</artifactId>
+					<artifactId>nexus-staging-maven-plugin</artifactId>
 					<version>1.5.1</version>
 					<executions>
 						<execution>
@@ -117,10 +117,15 @@
 						</execution>
 					</executions>
 					<configuration>
-						<serverId>nexus-releases</serverId>
+						<serverId>nexus-internal</serverId>
 						<nexusUrl>http://localhost:8081/nexus/</nexusUrl>
 						<skipStaging>true</skipStaging>
 					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>1.5.1</version>
 				</plugin>
 			</plugins>    	  
     	  </build>
