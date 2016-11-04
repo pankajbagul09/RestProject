@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>RestProject</groupId>
   <artifactId>RestProject</artifactId>
-  <version>1.1.8-SNAPSHOT</version>
+  <version>1.1.9-SNAPSHOT</version>
   <packaging>war</packaging>
   <repositories>
         <repository>
@@ -93,15 +93,9 @@
 		        <target>
 		          2.3.2
 		        </target>
+		        <skip>true</skip>
 		        </configuration>
 		      </plugin>			            
-        </plugins>
-    </build>
-    <profiles>
-    	<profile>
-    	  <id>releases</id>
-    	  <build>
-			<plugins>
 				<plugin>
 					<groupId>org.sonatype.plugins</groupId>
 					<artifactId>nexus-staging-maven-plugin</artifactId>
@@ -118,7 +112,7 @@
 					</executions>
 					<configuration>
 						<serverId>nexus-internal</serverId>
-						<nexusUrl>http://localhost:8081/nexus/content/repositories/releases</nexusUrl>
+						<nexusUrl>http://localhost:8081/nexus</nexusUrl>
 						<skipStaging>true</skipStaging>
 					</configuration>
 				</plugin>
@@ -129,6 +123,4 @@
 				</plugin>
 			</plugins>    	  
     	  </build>
-    	</profile>
-    </profiles>
 </project>
