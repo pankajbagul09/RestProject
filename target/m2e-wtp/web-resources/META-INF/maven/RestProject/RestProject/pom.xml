@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>RestProject</groupId>
   <artifactId>RestProject</artifactId>
-  <version>1.1.5-SNAPSHOT</version>
+  <version>1.1.6-SNAPSHOT</version>
   <packaging>war</packaging>
   <repositories>
         <repository>
@@ -67,6 +67,60 @@
 			<artifactId>spring-web</artifactId>
 			<version>3.0.5.RELEASE</version>
 		</dependency>
+		<dependency>
+
+<groupId>org.springframework</groupId>
+
+<artifactId>spring-context</artifactId>
+
+<version>${spring.version}</version>
+
+</dependency>
+
+
+<dependency>
+
+<groupId>org.springframework</groupId>
+
+<artifactId>spring-aop</artifactId>
+
+<version>${spring.version}</version>
+
+</dependency>
+
+
+<dependency>
+
+<groupId>org.springframework</groupId>
+
+<artifactId>spring-webmvc</artifactId>
+
+<version>${spring.version}</version>
+
+</dependency>
+
+
+<dependency>
+
+<groupId>org.springframework</groupId>
+
+<artifactId>spring-web</artifactId>
+
+<version>${spring.version}</version>
+
+</dependency>
+
+
+<dependency>
+
+<groupId>jstl</groupId>
+
+<artifactId>jstl</artifactId>
+
+<version>1.2</version>
+
+</dependency>
+		
     </dependencies>
 	 <scm>
         <connection>scm:git:https://github.com/pankajbagul09/RestProject</connection>
@@ -74,63 +128,130 @@
       <tag>HEAD</tag>
   </scm>
       
-    <build>
-        <finalName>RestProject</finalName>
-        <plugins>
-            <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target> 
-                </configuration>
-                
-            </plugin>
-			<plugin>
-		        <groupId>org.apache.maven.plugins</groupId>
-		        <artifactId>maven-release-plugin</artifactId>
-		        <configuration>
-		        <source>2.3.2</source>
-		        <target>
-		          2.3.2
-		        </target>
-		        </configuration>
-		      </plugin>			            
-        </plugins>
-    </build>
-    <profiles>
-    	<profile>
-    	  <id>releases</id>
-    	  <build>
-			<plugins>
-				<plugin>
-					<groupId>org.sonatype.plugins</groupId>
-					<artifactId>nexus-staging-maven-plugin</artifactId>
-					<version>2.5.1</version>
-					<executions>
-						<execution>
-						 <id>default-deploy</id>
-						 <phase>deploy</phase>
-						 <goals>
-						 	<goal>deploy</goal>
-						 </goals>
-						</execution>
-					</executions>
-					<configuration>
-						<serverId>nexus-internal</serverId>
-						<nexusUrl>http://localhost:8081/nexus/</nexusUrl>
-						<skipStaging>true</skipStaging>
-					</configuration>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-release-plugin</artifactId>
-					<version>2.5.1</version>
-					<configuration>
-        				<releaseProfiles>release-mode</releaseProfiles>
-    				</configuration>
-				</plugin>
-			</plugins>    	  
-    	  </build>
-    	</profile>
-    </profiles>
+
+<build>
+
+<sourceDirectory>src</sourceDirectory>
+
+
+<plugins>
+
+
+<plugin>
+
+<artifactId>maven-compiler-plugin</artifactId>
+
+<version>3.5.1</version>
+
+
+<configuration>
+
+<source>${java.version}</source>
+
+<target>${java.version}</target>
+
+</configuration>
+
+</plugin>
+
+
+<plugin>
+
+<artifactId>maven-war-plugin</artifactId>
+
+<version>3.0.0</version>
+
+
+<configuration>
+
+<warSourceDirectory>WebContent</warSourceDirectory>
+
+</configuration>
+
+</plugin>
+
+<!-- Disable Maven deploy plugin because we will replace it with the Nexus "nexus-staging-maven-plugin". The new plugin is designed to take full advantage of the more advanced functionality that next has to offer (such as staging) http://www.baeldung.com/maven-deploy-nexus -->
+
+
+
+<plugin>
+
+<groupId>org.apache.maven.plugins</groupId>
+
+<artifactId>maven-deploy-plugin</artifactId>
+
+
+<configuration>
+
+<skip>true</skip>
+
+</configuration>
+
+</plugin>
+
+<!-- Use nexus-staging-maven-plugin for reasons stated above. The Nexus-only staging functionality has been disabled as it is not required in our simple deployment. -->
+
+
+
+<plugin>
+
+<groupId>org.sonatype.plugins</groupId>
+
+<artifactId>nexus-staging-maven-plugin</artifactId>
+
+<version>1.5.1</version>
+
+
+<executions>
+
+
+<execution>
+
+<id>default-deploy</id>
+
+<phase>deploy</phase>
+
+
+<goals>
+
+<goal>deploy</goal>
+
+</goals>
+
+</execution>
+
+</executions>
+
+
+<configuration>
+
+<serverId>nexus</serverId>
+
+<nexusUrl>http://trehman3.cloudapp.net:8081/nexus/</nexusUrl>
+
+<skipStaging>true</skipStaging>
+
+</configuration>
+
+</plugin>
+
+
+<plugin>
+
+<groupId>org.apache.maven.plugins</groupId>
+
+<artifactId>maven-release-plugin</artifactId>
+
+<version>2.5.1</version>
+
+</plugin>
+
+</plugins>
+
+</build>
+
+
+
+
+
 </project>
