@@ -18,7 +18,7 @@ public class HelloWorldImplTest {
 	@Test
 	public void test() {
 		
-		assertTrue(true);
+		assertTrue(false);
 	}
 
 }
