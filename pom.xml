@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>RestProject</groupId>
   <artifactId>RestProject</artifactId>
-  <version>1.1.22-SNAPSHOT</version>
+  <version>1.1.22</version>
   <packaging>war</packaging>
   <repositories>
         <repository>
@@ -71,7 +71,7 @@
 	 <scm>
         <connection>scm:git:https://github.com/pankajbagul09/RestProject</connection>
         <developerConnection>scm:git:https://github.com/pankajbagul09/RestProject</developerConnection>
-      <tag>RestProject-1.1.19</tag>
+      <tag>RestProject-1.1.22</tag>
   </scm>
       
     <build>
