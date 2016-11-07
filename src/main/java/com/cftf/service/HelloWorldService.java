@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.howtodoinjava.jersey;
+package com.cftf.service;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -16,13 +16,13 @@ import org.springframework.stereotype.Component;
  */
 	
 @Path("/restapp")	
-public class GetMessageService {
+public class HelloWorldService {
 
 	
 	HelloWorld helloWorldImpl = new HelloWorldImpl();
 	
 	@GET
-	@Path("/getmessage")
+	@Path("/helloworld")
 	public Response getMessage() {
 		String result = helloWorldImpl.getMessage("Pankaj");
 		return Response.status(200).entity(result).build();

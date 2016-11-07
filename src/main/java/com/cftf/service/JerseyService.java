@@ -1,4 +1,4 @@
-package com.howtodoinjava.jersey;
+package com.cftf.service;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

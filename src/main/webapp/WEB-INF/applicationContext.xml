@@ -5,6 +5,6 @@
 
 
         <bean id="helloWorld"
-                  class="com.howtodoinjava.jersey.HelloWorldImpl" />
+                  class="com.cftf.service.HelloWorldImpl" />
 
 </beans>

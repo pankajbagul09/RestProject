@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.howtodoinjava.jersey;
+package com.cftf.service;
 
 /**
  * @author pankajbagul
