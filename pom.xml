@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>RestProject</groupId>
   <artifactId>RestProject</artifactId>
-  <version>1.1.10-SNAPSHOT</version>
+  <version>1.1.14-SNAPSHOT</version>
   <packaging>war</packaging>
   <repositories>
         <repository>
@@ -26,7 +26,7 @@
     <properties>
         <jersey2.version>2.19</jersey2.version>
         <jaxrs.version>2.0.1</jaxrs.version>
-	</properties>
+    </properties>
     <dependencies>
         <!-- JAX-RS -->
         <dependency>
@@ -71,7 +71,7 @@
 	 <scm>
         <connection>scm:git:https://github.com/pankajbagul09/RestProject</connection>
         <developerConnection>scm:git:https://github.com/pankajbagul09/RestProject</developerConnection>
-      <tag>1.1.10-tag</tag>
+      <tag>HEAD</tag>
   </scm>
       
     <build>
@@ -93,13 +93,19 @@
 		        <target>
 		          2.3.2
 		        </target>
-		        <skip>true</skip>
 		        </configuration>
-		      </plugin>	
+		      </plugin>			            
+        </plugins>
+    </build>
+    <profiles>
+    	<profile>
+    	  <id>releases</id>
+    	  <build>
+			<plugins>
 				<plugin>
 					<groupId>org.sonatype.plugins</groupId>
 					<artifactId>nexus-staging-maven-plugin</artifactId>
-					<version>2.5.1</version>
+					<version>1.5.1</version>
 					<executions>
 						<execution>
 						 <id>default-deploy</id>
@@ -112,10 +118,13 @@
 					</executions>
 					<configuration>
 						<serverId>nexus-internal</serverId>
-						<nexusUrl>http://localhost:8081/nexus</nexusUrl>
+						<nexusUrl>http://localhost:8081/nexus/content/repositories/releases</nexusUrl>
 						<skipStaging>true</skipStaging>
 					</configuration>
 				</plugin>
+				
 			</plugins>    	  
     	  </build>
+    	</profile>
+    </profiles>
 </project>
