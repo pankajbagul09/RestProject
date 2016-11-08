@@ -114,6 +114,7 @@
 		      </plugin>			            
         </plugins>
         
+        
     </build>
     <profiles>
     	<profile>
@@ -140,7 +141,13 @@
 						<skipStaging>true</skipStaging>
 					</configuration>
 				</plugin>
-				
+				<plugin>
+			        <groupId>org.apache.maven.plugins</groupId>
+			        <artifactId>maven-javadoc-plugin</artifactId>
+			        <version>2.10.4</version>
+			        <configuration>
+			        </configuration>
+		      </plugin>
 			</plugins>    	  
     	  </build>
     	</profile>
