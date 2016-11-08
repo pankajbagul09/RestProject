@@ -23,7 +23,7 @@ public class UploadDocumentImpl {
 		@FormDataParam("file") InputStream uploadedInputStream,
 		@FormDataParam("file") FormDataContentDisposition fileDetail) {
 
-		String uploadedFileLocation = "d://uploaded/" + fileDetail.getFileName();
+		String uploadedFileLocation = "c://QA/" + fileDetail.getFileName();
 
 		// save it
 		writeToFile(uploadedInputStream, uploadedFileLocation);
